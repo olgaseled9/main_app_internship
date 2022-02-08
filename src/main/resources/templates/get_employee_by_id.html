@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Item page</title>
+    <link th:href="@{/css/bootstrap.css}" rel="stylesheet">
+</head>
+<body>
+<form action="#" class="container" th:action="@{/get-by-id}" method="post">
+    <h3>Full employee information</h3>
+    <table class="table table-condensed">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Department</th>
+            <th>JobTitle</th>
+            <th>Gender</th>
+            <th>DateOfBirth</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td th:text="${employee.getId()}"></td>
+            <td th:text="${employee.getFirstname()}"></td>
+            <td th:text="${employee.getLastname()}"></td>
+            <td th:text="${employee.getDepartment()}"></td>
+            <td th:text="${employee.getJobTitle()}"></td>
+            <td th:text="${employee.getGender()}"></td>
+            <td th:text="${employee.getDateOfBirth()}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+    <button type="button" onclick="goBack()" class="btn btn-primary">Back</button>
+</form>
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
+</body>
+</html>

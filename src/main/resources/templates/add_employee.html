@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Add new item</title>
+    <link th:href="@{/css/bootstrap.css}" rel="stylesheet">
+</head>
+<nav class="navbar navbar-expand-sm navbar-brand bg-dark">
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a href="#" th:href="@{/employees}" class="nav-link">Employees</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<body>
+<form action="#" class="container" th:action="@{/add}" th:object="${employeeDTO}" method="post">
+    <h1 style="color: #a1134c">Add a new employee</h1>
+    <div class="col-sm-3">
+        <label for="firstname" class="form-label">Enter first name:</label>
+        <input type="text" th:field="*{firstname}" id="firstname"
+               class="form-control">
+        <div th:if="${#fields.hasErrors('firstname')}" th:errors="*{firstname}">Firstname error</div>
+    </div>
+    <div class="col-sm-3">
+        <label for="lastname" class="form-label">Enter last name:</label>
+        <input type="text" th:field="*{lastname}" id="lastname"
+               class="form-control">
+        <div th:if="${#fields.hasErrors('lastname')}" th:errors="*{lastname}">Lastname error</div>
+    </div>
+    <div>
+        <label><span>Choose department:</span>
+            <select class="form-select" th:object="${departments}" th:name="department">
+                <option th:each="department: ${departments}"
+                        th:value="${department.name}"
+                        th:utext="${department.name}"></option>
+            </select>
+        </label></div>
+    <div class="col-sm-3">
+        <label for="jobTitle" class="form-label">Enter job title:</label>
+        <input type="text" th:field="*{jobTitle}" id="jobTitle"
+               class="form-control">
+        <div th:if="${#fields.hasErrors('jobTitle')}" th:errors="*{jobTitle}">job title error</div>
+    </div>
+    <div>
+        <label><span>Choose gender:</span>
+            <select class="form-select" th:object="${genders}" th:name="gender">
+                <option th:each="gender: ${genders}"
+                        th:value="${gender.name}"
+                        th:utext="${gender.name}"></option>
+            </select>
+        </label></div>
+    <div class="col-sm-3">
+        <label for="dateOfBirth" class="form-label">Enter dateOfBirth:</label>
+        <input type="date" th:field="*{dateOfBirth}" id="dateOfBirth"
+               class="form-control">
+        <div th:if="${#fields.hasErrors('dateOfBirth')}" th:errors="*{dateOfBirth}">dateOfBirth error</div>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Add</button>
+    <button type="reset" class="btn btn-primary">Reset</button>
+    <button type="button" onclick="goBack()" class="btn btn-primary">Back</button>
+</form>
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
+</body>
+</html>
