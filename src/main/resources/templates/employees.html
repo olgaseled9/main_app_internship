@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
 <head>
     <meta charset="utf-8">
-    <title>Simple items list</title>
+    <title>Simple employee list</title>
     <link th:href="@{/css/bootstrap.css}" rel="stylesheet">
 </head>
 <nav class="navbar navbar-expand-sm navbar-brand bg-dark">
@@ -11,9 +11,6 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarMenu">
         <ul class="navbar-nav">
-            <li class="nav-item">
-                <a href="#" th:href="@{/employees}" class="nav-link">All employees</a>
-            </li>
             <li class="nav-item">
                 <a href="#" th:href="@{/add}" class="nav-link">Add new employee</a>
             </li>
@@ -33,6 +30,8 @@
         <th>job title</th>
         <th>gender</th>
         <th>date Of Birth</th>
+        <th>employee's page</th>
+        <th>delete</th>
     </tr>
     </thead>
     <tbody>
@@ -44,7 +43,13 @@
         <td th:text="${employee.jobTitle}"></td>
         <td th:text="${employee.gender}"></td>
         <td th:text="${employee.dateOfBirth}"></td>
-    </table>
+        <td>
+            <a th:href="@{/get-by-id/(id=${employee.getId()})}"><span>Show employee's page</span></a>
+        </td>
+        <td>
+            <a th:href="@{/remove/(id=${employee.getId()})}"><span>Delete</span></a>
+        </td>
+</table>
 <hr>
 <button type="button" onclick="goBack()" class="btn btn-primary">Go Back</button>
 <script>

@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
 <head>
     <meta charset="UTF-8">
-    <title>Add new item</title>
+    <title>Add new employee</title>
     <link th:href="@{/css/bootstrap.css}" rel="stylesheet">
 </head>
 <nav class="navbar navbar-expand-sm navbar-brand bg-dark">
@@ -12,20 +12,20 @@
     <div class="collapse navbar-collapse" id="navbarMenu">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a href="#" th:href="@{/employees}" class="nav-link">Employees</a>
+                <a href="#" th:href="@{/}" class="nav-link">Employees</a>
             </li>
         </ul>
     </div>
 </nav>
 <body>
-<form action="#" class="container" th:action="@{/add}" th:object="${employeeDTO}" method="post">
+    <form action="#" class="container" th:action="@{/add}"  th:object="${employeeDTO}"  method="post">
     <h1 style="color: #a1134c">Add a new employee</h1>
-    <div class="col-sm-3">
-        <label for="firstname" class="form-label">Enter first name:</label>
-        <input type="text" th:field="*{firstname}" id="firstname"
-               class="form-control">
-        <div th:if="${#fields.hasErrors('firstname')}" th:errors="*{firstname}">Firstname error</div>
-    </div>
+        <div class="col-sm-3">
+            <label for="firstname" class="form-label">Enter first name:</label>
+            <input type="text" th:field="*{firstname}" id="firstname"
+                   class="form-control">
+            <div th:if="${#fields.hasErrors('firstname')}" th:errors="*{firstname}">Lastname error</div>
+        </div>
     <div class="col-sm-3">
         <label for="lastname" class="form-label">Enter last name:</label>
         <input type="text" th:field="*{lastname}" id="lastname"

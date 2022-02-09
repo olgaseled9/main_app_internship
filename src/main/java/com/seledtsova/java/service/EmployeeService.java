@@ -1,7 +1,6 @@
 package com.seledtsova.java.service;
 
 import com.seledtsova.java.dto.EmployeeDTO;
-import com.seledtsova.java.entity.Employee;
 
 import java.util.List;
 

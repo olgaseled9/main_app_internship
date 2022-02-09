@@ -27,7 +27,7 @@ public class EmployeeController {
     @Autowired
     private GenderService genderService;
 
-    @RequestMapping(value = {"/employees"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/"}, method = RequestMethod.GET)
     public String getAll(Model model) {
         List<EmployeeDTO> employees = employeeService.getEmployees();
         model.addAttribute("employees", employees);
@@ -42,16 +42,16 @@ public class EmployeeController {
     }
 
     @PostMapping("/add")
-    public String addEmployee(@ModelAttribute("employeeDTO") @Valid EmployeeDTO employeeDTO, BindingResult bindingResult, Model model) {
+    public String addEmployee(@Valid EmployeeDTO employeeDTO, BindingResult bindingResult, Model model) {
         model.addAttribute("departments", departmentService.findAll());
         model.addAttribute("genders", genderService.findAll());
         if (!bindingResult.hasErrors()) {
             employeeService.addEmployee(employeeDTO);
             log.info("New employee add successfully");
-            return "redirect:/employees";
+            return "redirect:/";
         } else {
             log.error("Employee not added");
-            return "employees";
+            return "error";
         }
     }
 
@@ -61,7 +61,7 @@ public class EmployeeController {
             employeeService.removeEmployeeById(id);
             log.info("Employee removed successfully");
         }
-        return "redirect:/users/allusers";
+        return "redirect:/";
     }
 
     @GetMapping("/get-by-id")
@@ -70,7 +70,6 @@ public class EmployeeController {
         model.addAttribute("employee", employee);
         return "get_employee_by_id";
     }
-
 }
 
 

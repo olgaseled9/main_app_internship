@@ -1,7 +1,8 @@
-package com.seledtsova.java.controllers.web;
+package com.seledtsova.java.controllers.rest;
 
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.seledtsova.java.controllers.rest.EmployeeRestController;
 import com.seledtsova.java.dto.EmployeeDTO;
 import com.seledtsova.java.entity.DepartmentType;
 import com.seledtsova.java.entity.GenderType;
@@ -22,7 +23,7 @@ import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@WebMvcTest(controllers = EmployeeController.class)
+@WebMvcTest(controllers = EmployeeRestController.class)
 class EmployeeControllerTest {
 
     @Autowired
@@ -100,7 +101,7 @@ class EmployeeControllerTest {
         employeeDTO.setDateOfBirth("2011-11-12");
         when(employeeService.findEmployeeById(id)).thenReturn(employeeDTO);
         MvcResult result = mockMvc.perform(
-                get("/api/employee" + "/{id}", id)
+                get("/api" + "/{id}", id)
                         .contentType(MediaType.APPLICATION_JSON)
         ).andReturn();
         String resultString = result.getResponse().getContentAsString();
