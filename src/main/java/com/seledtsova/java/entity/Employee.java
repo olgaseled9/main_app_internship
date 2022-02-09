@@ -6,8 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.sql.Date;
-import java.time.LocalDate;
+import java.util.Calendar;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -43,7 +43,7 @@ public class Employee {
     @JoinColumn(name = "gender_id", nullable = false)
     private Gender gender;
     @Column(name = "date_of_birth")
-    private LocalDate dateOfBirth;
+    private String dateOfBirth;
 
     @Override
     public String toString() {

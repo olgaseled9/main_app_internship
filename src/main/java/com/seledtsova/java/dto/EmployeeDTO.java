@@ -3,16 +3,14 @@ package com.seledtsova.java.dto;
 import com.seledtsova.java.entity.DepartmentType;
 import com.seledtsova.java.entity.GenderType;
 import lombok.Data;
-import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
 import javax.validation.constraints.NotNull;
-import java.time.LocalDate;
+import java.util.Date;
 
 @Data
 @RequiredArgsConstructor
 public class EmployeeDTO {
-
 
     private Long id;
     @NotNull
@@ -26,6 +24,6 @@ public class EmployeeDTO {
     @NotNull
     private GenderType gender;
     @NotNull
-    private LocalDate dateOfBirth;
+    private String dateOfBirth;
 
 }
