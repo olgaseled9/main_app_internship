@@ -8,5 +8,5 @@ public interface EmployeeServiceConverter {
 
     EmployeeDTO convertEmployeeToDTO(Employee employee);
 
-    Employee convertDTOtoEmployee (EmployeeDTO employeeDTO);
+    Employee convertDTOtoEmployee(EmployeeDTO employeeDTO);
 }

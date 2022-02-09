@@ -1,4 +1,4 @@
-> Main_app is a single application that includes a REST API and UI, which allows you to perform CRUD operations on an entity.
+> Main_app is a simple application that includes a REST API and UI, which allows you to perform CRUD operations on an entity.
 
 * [General information about the project ](#general-information-about-the-project)
 * [Technologies ](#technologies)

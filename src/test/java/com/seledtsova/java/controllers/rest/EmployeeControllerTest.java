@@ -1,8 +1,6 @@
 package com.seledtsova.java.controllers.rest;
 
-
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.seledtsova.java.controllers.rest.EmployeeRestController;
 import com.seledtsova.java.dto.EmployeeDTO;
 import com.seledtsova.java.entity.DepartmentType;
 import com.seledtsova.java.entity.GenderType;
