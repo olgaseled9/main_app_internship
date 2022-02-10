@@ -61,5 +61,31 @@ public class EmployeeServiceImpl implements EmployeeService {
             throw new ServiceException(String.format("Employee is not found with id=", id));
         }
     }
+
+    @Override
+    @Transactional
+    public void updateEmployee(EmployeeDTO employeeDTO) {
+        Employee employee = employeeDao.findById(employeeDTO.getId());
+        if (Objects.nonNull(employee)) {
+            employee.setFirstname(employeeDTO.getFirstname());
+            employee.setLastname(employeeDTO.getLastname());
+            employee.setDepartment(employee.getDepartment());
+            employee.setGender(employee.getGender());
+            employee.setDateOfBirth(employee.getDateOfBirth());
+        } else {
+            throw new ServiceException(String.format("Employee was not found ", employeeDTO.getId()));
+        }
+    }
+
+    @Override
+    @Transactional
+    public EmployeeDTO getById(Long id) {
+        Employee employee = employeeDao.findById(id);
+        if (Objects.nonNull(employee)) {
+            return converter.convertEmployeeToDTO(employee);
+        } else {
+            throw new ServiceException(String.format("Employee was not found with id=", id));
+        }
+    }
 }
 

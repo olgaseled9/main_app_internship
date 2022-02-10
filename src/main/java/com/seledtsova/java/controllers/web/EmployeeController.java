@@ -70,6 +70,29 @@ public class EmployeeController {
         model.addAttribute("employee", employee);
         return "get_employee_by_id";
     }
+
+    @GetMapping("/update")
+    public String getUpdateEmployeesPage(@RequestParam("id") Long id, Model model, EmployeeDTO employeeDTO) {
+        employeeDTO = employeeService.getById(id);
+        model.addAttribute("employeeDTO", employeeDTO);
+        model.addAttribute("departments", departmentService.findAll());
+        model.addAttribute("genders", genderService.findAll());
+        return "update_employee";
+    }
+
+    @PostMapping("/update")
+    public String updateEmployeePage(@Valid EmployeeDTO employeeDTO, BindingResult bindingResult, Model model) {
+        model.addAttribute("departments", departmentService.findAll());
+        model.addAttribute("genders", genderService.findAll());
+        if (!bindingResult.hasErrors()) {
+            employeeService.updateEmployee(employeeDTO);
+            log.info("Employee update successfully");
+            return "redirect:/";
+        } else {
+            log.error("Employee not updated");
+            return "error";
+        }
+    }
 }
 
 

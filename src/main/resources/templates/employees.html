@@ -32,6 +32,7 @@
         <th>date Of Birth</th>
         <th>employee's page</th>
         <th>delete</th>
+        <th>update</th>
     </tr>
     </thead>
     <tbody>
@@ -48,6 +49,9 @@
         </td>
         <td>
             <a th:href="@{/remove/(id=${employee.getId()})}"><span>Delete</span></a>
+        </td>
+        <td>
+            <a th:href="@{/update/(id=${employee.getId()})}"><span>Update</span></a>
         </td>
 </table>
 <hr>
