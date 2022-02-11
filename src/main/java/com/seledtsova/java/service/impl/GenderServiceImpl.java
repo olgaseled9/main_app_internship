@@ -6,8 +6,9 @@ import com.seledtsova.java.entity.Gender;
 import com.seledtsova.java.service.GenderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,12 +27,13 @@ public class GenderServiceImpl implements GenderService {
             genderDTOS.add(convertGenderToDTO(gender));
         }
         return genderDTOS;
-    }
+ }
 
     private GenderDTO convertGenderToDTO(Gender gender) {
         GenderDTO genderDTO = new GenderDTO();
         genderDTO.setName(gender.getName());
         return genderDTO;
     }
+
 }
 

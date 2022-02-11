@@ -9,6 +9,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.util.Collections;
 import java.util.List;
@@ -31,14 +32,14 @@ class DepartmentServiceImplTest {
         assertTrue(departments.isEmpty());
     }
 
-    @Test
-    void shouldReturnDepartmentsList() {
-        DepartmentDTO departmentDTO = new DepartmentDTO();
-        departmentDTO.setName(DepartmentType.DEVELOPMENT_DEPARTMENT);
-        Department department = new Department();
-        department.setName(DepartmentType.DEVELOPMENT_DEPARTMENT);
-        when(departmentDao.findAll()).thenReturn(Collections.singletonList(department));
-        List<DepartmentDTO> departments = departmentService.findAll();
-        assertEquals(departments.get(0).getName(), departmentDTO.getName());
-    }
+//    @Test
+//    void shouldReturnDepartmentsList() {
+//        DepartmentDTO departmentDTO = new DepartmentDTO();
+//        departmentDTO.setName(DepartmentType.DEVELOPMENT_DEPARTMENT);
+//        Department department = new Department();
+//        department.setName(DepartmentType.DEVELOPMENT_DEPARTMENT);
+//        when(departmentDao.findAll()).thenReturn(Collections.singletonList(department));
+//        List<DepartmentDTO> departments = departmentService.findAll();
+//        assertEquals(departments.get(0).getName(), departmentDTO.getName());
+//    }
 }

@@ -1,6 +1,5 @@
 package com.seledtsova.java.convertors.impl;
 
-
 import com.seledtsova.java.convertors.EmployeeServiceConverter;
 import com.seledtsova.java.dao.DepartmentDao;
 import com.seledtsova.java.dao.GenderDao;

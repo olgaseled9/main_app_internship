@@ -3,8 +3,6 @@ package com.seledtsova.java.dao.impl;
 import com.seledtsova.java.dao.DepartmentDao;
 import com.seledtsova.java.entity.Department;
 import com.seledtsova.java.entity.DepartmentType;
-import com.seledtsova.java.entity.Gender;
-import com.seledtsova.java.entity.GenderType;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.Query;
@@ -21,3 +19,4 @@ public class DepartmentDaoImpl extends GenericDaoImpl<Long, Department> implemen
         return (Department) query.getSingleResult();
     }
 }
+

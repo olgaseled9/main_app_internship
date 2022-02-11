@@ -23,9 +23,9 @@
 - Maven
 - Spring Boot
 - Spring MVC
+- Hibernate
 - Git
 - Docker
-- Hibernate
 - REST
 - JSON
 - HTML5
@@ -47,8 +47,9 @@
 ## Screenshots
 
 ![users_profile](./img/list_of_employees.jpg)
-![list_of_items](./img/employee_page.jpg)
+![list_of_items](./img/employee.jpg)
 ![update_users_profiles](./img/add_employee.jpg)
+![update_users_profiles](./img/update.jpg)
 
 
 

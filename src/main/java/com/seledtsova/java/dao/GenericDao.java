@@ -2,6 +2,7 @@ package com.seledtsova.java.dao;
 
 import java.util.List;
 
+
 public interface GenericDao<I, T> {
 
     void add(T entity);
@@ -13,5 +14,4 @@ public interface GenericDao<I, T> {
     T findById(I id);
 
     List<T> findAll();
-
 }
