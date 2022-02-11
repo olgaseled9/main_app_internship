@@ -46,10 +46,11 @@
 
 ## Screenshots
 
-![users_profile](./img/list_of_employees.jpg)
-![list_of_items](./img/employee.jpg)
-![update_users_profiles](./img/add_employee.jpg)
-![update_users_profiles](./img/update.jpg)
+![employee](./img/employee.jpg)
+![add_employee](./img/add_employee.jpg)
+![update](./img/update.jpg)
+![employee_page](./img/employee_page.jpg)
+
 
 
 
